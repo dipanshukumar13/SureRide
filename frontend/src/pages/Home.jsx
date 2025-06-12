@@ -60,8 +60,18 @@ const Home = () => {
     }, [vehiclePanel])
 
 
+  useGSAP(function () {
+        if (confirmRidePanel) {
+            gsap.to(confirmRidePanelRef.current, {
+                transform: 'translateY(0)'
+            })
+        } else {
+            gsap.to(confirmRidePanelRef.current, {
+                transform: 'translateY(100%)'
+            })
+        }
+    }, [confirmRidePanel])
 
-  
 
   return (
     <div className='h-screen relative overflow-hidden'>
