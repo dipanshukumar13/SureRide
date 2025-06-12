@@ -47,6 +47,20 @@ const Home = () => {
     }
   },[panelOpen])
 
+  useGSAP(function () {
+        if (vehiclePanel) {
+            gsap.to(vehiclePanelRef.current, {
+                transform: 'translateY(0)'
+            })
+        } else {
+            gsap.to(vehiclePanelRef.current, {
+                transform: 'translateY(100%)'
+            })
+        }
+    }, [vehiclePanel])
+
+
+
   
 
   return (
